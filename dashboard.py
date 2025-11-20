@@ -4,10 +4,6 @@ import plotly.express as px
 import folium
 from streamlit_folium import st_folium
 
-import pkg_resources
-installed = sorted([p.project_name for p in pkg_resources.working_set])
-print("Installed packages:", installed)
-
 # —–– Fungsi load data dari HuggingFace
 @st.cache_data(show_spinner="🔄 Mengunduh dataset dari HuggingFace…")
 def load_data():
@@ -172,6 +168,7 @@ folium.Choropleth(
     legend_name="Rata-rata Waktu Pengiriman (hari)",
 ).add_to(m)
 st_folium(m, width=700, height=450)
+
 
 
 
